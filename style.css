@@ -1,0 +1,44 @@
+/* Custom Styles for LÍMITE ELECTRÓNICO */
+
+/* Smooth Glassmorphism Header Blur */
+.header-blur {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+/* Custom Soft Floating Animation for Mockup Badges */
+@keyframes slowBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.animate-bounce-slow {
+    animation: slowBounce 4s ease-in-out infinite;
+}
+
+/* Gradient Borders for Technological Look */
+.gradient-border {
+    position: relative;
+}
+
+.gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: 1rem;
+    padding: 1px;
+    background: linear-gradient(to bottom right, rgba(0, 210, 255, 0.4), rgba(0, 82, 255, 0.1), transparent);
+    
+    /* Standard and Webkit masks for full cross-browser support */
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    
+    pointer-events: none;
+}

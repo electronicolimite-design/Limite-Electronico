@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LÍMITE ELECTRÓNICO | Páginas Web y Catálogos Digitales</title>
+
+    <link rel="icon" type="image/png" href="assets/image/logo.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#030B1E',
+                            surface: '#0A1735',
+                            card: '#0F214A',
+                            primary: '#0052FF',
+                            electric: '#0066FF',
+                            cyan: '#00D2FF',
+                            light: '#EAF2FF'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-brand-dark text-slate-100 font-sans antialiased overflow-x-hidden">
+
+    <!-- Background Subtle Gradients -->
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        <div class="absolute -top-[20%] -left-[10%] w-[600px] h-[600px] bg-brand-primary/10 rounded-full blur-[140px]"></div>
+        <div class="absolute top-[40%] -right-[10%] w-[500px] h-[500px] bg-brand-cyan/10 rounded-full blur-[140px]"></div>
+        <div class="absolute -bottom-[20%] left-[20%] w-[700px] h-[700px] bg-brand-electric/10 rounded-full blur-[160px]"></div>
+    </div>
+
+    <!-- HEADER / NAVBAR -->
+    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 header-blur bg-brand-dark/80 border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo -->
+                <a href="#inicio" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-primary to-brand-cyan flex items-center justify-center text-white shadow-lg shadow-brand-primary/30 group-hover:scale-105 transition-transform">
+                        <img src="assets/image/logo.png" alt="Logo Límite Electrónico" class="w-full h-full object-contain">
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-xl font-extrabold tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-100 to-brand-cyan">
+                            LÍMITE ELECTRÓNICO
+                        </span>
+                        <span class="text-[10px] tracking-widest text-brand-cyan uppercase font-semibold -mt-1">
+                            Agencia Web & Digital
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-300">
+                    <a href="#inicio" class="hover:text-brand-cyan transition-colors active">Inicio</a>
+                    <a href="#servicios" class="hover:text-brand-cyan transition-colors">Servicios</a>
+                    <a href="#catalogos" class="hover:text-brand-cyan transition-colors">Catálogos Web</a>
+                    <a href="#diseno-web" class="hover:text-brand-cyan transition-colors">Diseño Web</a>
+                    <a href="#beneficios" class="hover:text-brand-cyan transition-colors">Beneficios</a>
+                    <a href="#nosotros" class="hover:text-brand-cyan transition-colors">Nosotros</a>
+                    <a href="#contacto" class="hover:text-brand-cyan transition-colors">Contacto</a>
+                </nav>
+
+                <!-- Action Button -->
+                <div class="hidden lg:flex items-center">
+                    <a href="https://wa.me/573134426880?text=Hola,%20quisiera%20solicitar%20una%20cotizaci%C3%B3n%20para%20un%20proyecto%20web" target="_blank" class="bg-gradient-to-r from-brand-primary to-brand-electric hover:from-brand-electric hover:to-brand-cyan text-white px-5 py-2.5 rounded-xl font-semibold shadow-lg shadow-brand-primary/25 hover:shadow-brand-cyan/25 transition-all duration-300 transform hover:-translate-y-0.5 flex items-center gap-2 text-sm">
+                        <i data-lucide="message-square" class="w-4 h-4"></i>
+                        <span>Solicitar cotización</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden p-2 text-slate-300 hover:text-white focus:outline-none" aria-label="Abrir menú">
+                    <i data-lucide="menu" class="w-7 h-7"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-brand-surface/95 backdrop-blur-xl border-b border-slate-800">
+            <div class="px-4 pt-4 pb-6 space-y-3">
+                <a href="#inicio" class="mobile-link block px-3 py-2 rounded-lg text-slate-200 hover:bg-brand-card hover:text-brand-cyan font-medium">Inicio</a>
+                <a href="#servicios" class="mobile-link block px-3 py-2 rounded-lg text-slate-200 hover:bg-brand-card hover:text-brand-cyan font-medium">Servicios</a>
+                <a href="#catalogos" class="mobile-link block px-3 py-2 rounded-lg text-slate-200 hover:bg-brand-card hover:text-brand-cyan font-medium">Catálogos Web</a>
+                <a href="#diseno-web" class="mobile-link block px-3 py-2 rounded-lg text-slate-200 hover:bg-brand-card hover:text-brand-cyan font-medium">Diseño Web</a>
+                <a href="#beneficios" class="mobile-link block px-3 py-2 rounded-lg text-slate-200 hover:bg-brand-card hover:text-brand-cyan font-medium">Beneficios</a>
+                <a href="#nosotros" class="mobile-link block px-3 py-2 rounded-lg text-slate-200 hover:bg-brand-card hover:text-brand-cyan font-medium">Nosotros</a>
+                <a href="#contacto" class="mobile-link block px-3 py-2 rounded-lg text-slate-200 hover:bg-brand-card hover:text-brand-cyan font-medium">Contacto</a>
+                
+                <div class="pt-2">
+                    <a href="https://wa.me/573134426880?text=Hola,%20quisiera%20solicitar%20una%20cotizaci%C3%B3n" target="_blank" class="w-full bg-gradient-to-r from-brand-primary to-brand-electric text-white px-4 py-3 rounded-xl font-semibold shadow-md flex items-center justify-center gap-2">
+                        <i data-lucide="message-square" class="w-5 h-5"></i>
+                        <span>Solicitar cotización</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Content -->
+                <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-primary/10 border border-brand-primary/30 text-brand-cyan text-sm font-semibold">
+                        <span class="flex h-2 w-2 rounded-full bg-brand-cyan animate-ping"></span>
+                        <span>Transformación Digital para Tu Negocio</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight">
+                        Lleva tu negocio al <br class="hidden sm:inline"/>
+                        <span class="bg-clip-text text-transparent bg-gradient-to-r from-brand-cyan via-brand-electric to-blue-400">
+                            mundo digital
+                        </span>
+                    </h1>
+
+                    <p class="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        Creamos páginas web y catálogos digitales modernos para que tus clientes conozcan tus productos y contacten contigo fácilmente.
+                    </p>
+
+                    <!-- CTAs -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#catalogos" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-brand-primary via-brand-electric to-brand-cyan text-white font-bold text-base shadow-xl shadow-brand-primary/30 hover:shadow-brand-cyan/40 hover:scale-[1.02] transition-all duration-300 text-center flex items-center justify-center gap-2">
+                            <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+                            <span>Crear mi catálogo</span>
+                        </a>
+                        <a href="#servicios" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-surface border border-slate-700/80 hover:border-brand-cyan/50 text-slate-200 hover:text-white font-semibold text-base transition-all duration-300 text-center flex items-center justify-center gap-2 hover:bg-brand-card">
+                            <span>Ver servicios</span>
+                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+
+                    <!-- Trust Stats -->
+                    <div class="pt-8 border-t border-slate-800/80 grid grid-cols-3 gap-4 text-center lg:text-left">
+                        <div>
+                            <div class="text-2xl font-bold text-white">+100%</div>
+                            <div class="text-xs text-slate-400">Profesionalismo</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-brand-cyan">WhatsApp</div>
+                            <div class="text-xs text-slate-400">Integrado directo</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-white">24/7</div>
+                            <div class="text-xs text-slate-400">Catálogo activo</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Visual Mockup -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        
+                        <!-- Floating Badges -->
+                        <div class="absolute -top-6 -left-6 z-30 bg-brand-surface/90 backdrop-blur-md border border-brand-cyan/40 text-brand-cyan text-xs font-bold px-4 py-2.5 rounded-xl shadow-xl flex items-center gap-2 animate-bounce-slow">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-cyan"></i>
+                            <span>Diseño profesional</span>
+                        </div>
+
+                        <div class="absolute top-1/2 -right-8 z-30 bg-brand-surface/90 backdrop-blur-md border border-brand-primary/40 text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow-xl flex items-center gap-2">
+                            <i data-lucide="smartphone" class="w-4 h-4 text-brand-cyan"></i>
+                            <span>100% adaptable</span>
+                        </div>
+
+                        <div class="absolute -bottom-6 left-10 z-30 bg-emerald-950/90 backdrop-blur-md border border-emerald-500/40 text-emerald-400 text-xs font-bold px-4 py-2.5 rounded-xl shadow-xl flex items-center gap-2">
+                            <i data-lucide="message-circle" class="w-4 h-4 fill-emerald-400"></i>
+                            <span>Contacto por WhatsApp</span>
+                        </div>
+
+                        <!-- Laptop Mockup -->
+                        <div class="bg-slate-900 rounded-2xl p-3 border border-slate-800 shadow-2xl relative z-10 gradient-border">
+                            <!-- Browser Top Bar -->
+                            <div class="flex items-center justify-between pb-3 px-2 border-b border-slate-800">
+                                <div class="flex items-center gap-1.5">
+                                    <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+                                    <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                                    <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+                                </div>
+                                <div class="bg-slate-950 px-4 py-1 rounded-md text-[11px] text-slate-400 font-mono flex items-center gap-2 border border-slate-800/80">
+                                    <i data-lucide="lock" class="w-3 h-3 text-emerald-400"></i>
+                                    <span>mi-negocio.com/catalogo</span>
+                                </div>
+                                <div class="w-12"></div>
+                            </div>
+
+                            <!-- Screen Content (Generic Business Demo: Cafe/Bakery/Boutique) -->
+                            <div class="bg-slate-950 rounded-lg p-4 mt-2 overflow-hidden space-y-3">
+                                <!-- Banner Header Demo -->
+                                <div class="h-20 rounded-lg bg-gradient-to-r from-amber-700/40 via-orange-600/30 to-brand-card p-3 flex justify-between items-end border border-amber-500/20">
+                                    <div>
+                                        <div class="text-xs font-bold text-amber-200">Café & Repostería Gourmet</div>
+                                        <div class="text-[10px] text-slate-300">Catálogo Digital Oficial</div>
+                                    </div>
+                                    <div class="bg-emerald-600 text-white text-[9px] px-2 py-1 rounded-md font-bold">WhatsApp</div>
+                                </div>
+
+                                <!-- Product Grid Demo -->
+                                <div class="grid grid-cols-2 gap-2">
+                                    <div class="bg-slate-900 p-2 rounded-lg border border-slate-800">
+                                        <div class="h-16 rounded bg-slate-800 mb-2 overflow-hidden relative">
+                                            <div class="absolute inset-0 bg-gradient-to-br from-amber-900/50 to-amber-700/30 flex items-center justify-center">
+                                                <i data-lucide="coffee" class="w-6 h-6 text-amber-400"></i>
+                                            </div>
+                                        </div>
+                                        <div class="text-[11px] font-semibold text-slate-200 truncate">Café Artesanal</div>
+                                        <div class="text-[10px] text-brand-cyan font-bold">$18.000 COP</div>
+                                    </div>
+                                    <div class="bg-slate-900 p-2 rounded-lg border border-slate-800">
+                                        <div class="h-16 rounded bg-slate-800 mb-2 overflow-hidden relative">
+                                            <div class="absolute inset-0 bg-gradient-to-br from-rose-900/50 to-pink-700/30 flex items-center justify-center">
+                                                <i data-lucide="cake" class="w-6 h-6 text-rose-400"></i>
+                                            </div>
+                                        </div>
+                                        <div class="text-[11px] font-semibold text-slate-200 truncate">Tarta de Arándanos</div>
+                                        <div class="text-[10px] text-brand-cyan font-bold">$35.000 COP</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mobile Phone Overlay Mockup -->
+                        <div class="absolute -bottom-8 -right-4 w-44 bg-slate-900 rounded-3xl p-2.5 border-2 border-slate-700 shadow-2xl z-20 hidden sm:block">
+                            <div class="w-12 h-1 bg-slate-700 rounded-full mx-auto mb-2"></div>
+                            <div class="bg-slate-950 rounded-2xl p-2.5 space-y-2 border border-slate-800">
+                                <div class="flex items-center justify-between border-b border-slate-800 pb-1.5">
+                                    <span class="text-[9px] font-bold text-slate-200">Menú Digital</span>
+                                    <span class="text-[8px] bg-brand-primary px-1.5 py-0.5 rounded text-white">Ver</span>
+                                </div>
+                                <div class="bg-slate-900 p-1.5 rounded-lg flex items-center gap-2">
+                                    <div class="w-7 h-7 rounded bg-brand-card flex items-center justify-center text-brand-cyan">
+                                        <i data-lucide="utensils" class="w-3.5 h-3.5"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-[9px] font-bold text-slate-200">Combo Gourmet</div>
+                                        <div class="text-[8px] text-emerald-400 font-bold">Pedir por WA</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: CLIENT PROBLEM -->
+    <section class="py-20 bg-brand-surface/60 border-y border-slate-800 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-brand-cyan font-bold text-sm tracking-widest uppercase">Diagnóstico Digital</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
+                    ¿Tu negocio todavía depende únicamente de <span class="text-rose-400 underline decoration-rose-500/40">Facebook</span> o <span class="text-emerald-400 underline decoration-emerald-500/40">WhatsApp</span>?
+                </h2>
+                <p class="text-slate-300">
+                    Confiar solo en redes sociales limita las ventas de tu empresa y hace que pierdas clientes potenciales todos los días.
+                </p>
+            </div>
+
+            <!-- Problem Cards -->
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <!-- Problem 1 -->
+                <div class="bg-brand-dark/90 border border-slate-800 p-8 rounded-2xl hover:border-rose-500/40 transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-2xl bg-rose-500/10 text-rose-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="search-x" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Tus clientes no encuentran fácilmente todos tus productos</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        En redes sociales las publicaciones antiguas se pierden. El cliente se agota de buscar y termina comprando en la competencia.
+                    </p>
+                </div>
+
+                <!-- Problem 2 -->
+                <div class="bg-brand-dark/90 border border-slate-800 p-8 rounded-2xl hover:border-amber-500/40 transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-2xl bg-amber-500/10 text-amber-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="layers" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">La información está dispersa entre diferentes publicaciones</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Precios, fotos, descripciones y horarios están desperdigados en historias y chats. Responder la misma pregunta consume horas de tu tiempo.
+                    </p>
+                </div>
+
+                <!-- Problem 3 -->
+                <div class="bg-brand-dark/90 border border-slate-800 p-8 rounded-2xl hover:border-brand-primary/40 transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-primary/10 text-brand-cyan flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="store" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">No tienes un espacio digital profesional para mostrar tu negocio</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Sin un sitio propio, tu empresa proyecta informabilidad y falta de solidez frente a competidores más consolidados.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Solution Banner -->
+            <div class="mt-16 bg-gradient-to-r from-brand-primary/20 via-brand-surface to-brand-cyan/10 border border-brand-cyan/30 rounded-2xl p-8 text-center max-w-4xl mx-auto">
+                <h3 class="text-2xl sm:text-3xl font-extrabold text-white mb-2">Nosotros tenemos la solución.</h3>
+                <p class="text-slate-300 mb-6">Centralizamos tus productos y servicios en un catálogo digital accesible desde cualquier enlace o código QR.</p>
+                <a href="#catalogos" class="inline-flex items-center gap-2 bg-brand-cyan text-brand-dark font-bold px-6 py-3 rounded-xl hover:bg-white transition-colors">
+                    <span>Ver cómo funciona</span>
+                    <i data-lucide="arrow-down" class="w-4 h-4"></i>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 4: SERVICES -->
+    <section id="servicios" class="py-24 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-brand-cyan font-bold text-sm tracking-widest uppercase">Servicios Especializados</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
+                    Soluciones digitales para tu negocio
+                </h2>
+                <p class="text-slate-300">
+                    Diseño web estratégico y catálogos interactivos orientados a generar confianza y facilidades de compra.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Service 1 -->
+                <div class="bg-brand-surface border border-slate-800 hover:border-brand-primary p-8 rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-primary/10">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-primary to-brand-electric text-white flex items-center justify-center mb-6">
+                        <i data-lucide="layout" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Diseño de Páginas Web</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Creamos sitios web modernos para presentar tu negocio, servicios, información y formas de contacto.
+                    </p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-brand-surface border border-slate-800 hover:border-brand-cyan p-8 rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-cyan/10">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-cyan to-blue-600 text-white flex items-center justify-center mb-6">
+                        <i data-lucide="grid" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Catálogos Web</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Organizamos todos tus productos en un catálogo digital profesional y fácil de consultar.
+                    </p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-brand-surface border border-slate-800 hover:border-brand-primary p-8 rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-primary/10">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 text-white flex items-center justify-center mb-6">
+                        <i data-lucide="smartphone" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Diseño Responsive</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Tu página se adapta perfectamente a celulares, tablets y computadores sin perder legibilidad.
+                    </p>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-brand-surface border border-slate-800 hover:border-emerald-500 p-8 rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-emerald-500/10">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 text-white flex items-center justify-center mb-6">
+                        <i data-lucide="message-circle" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Integración con WhatsApp</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Facilitamos que tus clientes puedan contactarte directamente desde tu página o catálogo con un clic.
+                    </p>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="bg-brand-surface border border-slate-800 hover:border-brand-cyan p-8 rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-cyan/10">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-brand-primary text-white flex items-center justify-center mb-6">
+                        <i data-lucide="globe-2" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Presencia Digital</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Haz que tu negocio tenga una imagen profesional en Internet y destaca frente a la competencia local.
+                    </p>
+                </div>
+
+                <!-- Service CTA Card -->
+                <div class="bg-gradient-to-br from-brand-card to-brand-dark border border-brand-primary/40 p-8 rounded-2xl flex flex-col justify-between">
+                    <div>
+                        <div class="text-brand-cyan font-bold text-xs uppercase tracking-wider mb-2">Atención Personalizada</div>
+                        <h3 class="text-xl font-bold text-white mb-3">¿Necesitas algo a la medida?</h3>
+                        <p class="text-slate-300 text-sm">Analizamos tu modelo de negocio y estructuramos una solución personalizada.</p>
+                    </div>
+                    <a href="https://wa.me/573134426880?text=Hola,%20me%20gustar%C3%ADa%20asesor%C3%ADa%20para%20mi%20negocio" target="_blank" class="mt-6 inline-flex items-center justify-center gap-2 text-sm font-bold text-brand-cyan hover:text-white transition-colors">
+                        <span>Hablar con un diseñador</span>
+                        <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 5: FEATURED SECTION - CATÁLOGOS WEB -->
+    <section id="catalogos" class="py-24 bg-brand-surface/80 border-y border-slate-800 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Catalog Copy -->
+                <div class="lg:col-span-6 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-cyan/10 border border-brand-cyan/30 text-brand-cyan text-xs font-bold uppercase tracking-wider">
+                        Servicio Estrella
+                    </div>
+
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white leading-tight">
+                        Tu negocio. Todos tus productos. <span class="text-brand-cyan">En un solo lugar.</span>
+                    </h2>
+
+                    <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
+                        Creamos catálogos web personalizados para que puedas mostrar todos los productos o servicios de tu negocio de una forma organizada, profesional y atractiva.
+                    </p>
+
+                    <!-- Benefits Grid -->
+                    <div class="grid sm:grid-cols-2 gap-3 pt-4">
+                        <div class="flex items-center gap-3 bg-brand-dark/60 p-3 rounded-xl border border-slate-800">
+                            <i data-lucide="check" class="w-5 h-5 text-brand-cyan flex-shrink-0"></i>
+                            <span class="text-sm font-medium text-slate-200">Todos tus productos organizados</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-brand-dark/60 p-3 rounded-xl border border-slate-800">
+                            <i data-lucide="check" class="w-5 h-5 text-brand-cyan flex-shrink-0"></i>
+                            <span class="text-sm font-medium text-slate-200">Fotografías y descripciones</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-brand-dark/60 p-3 rounded-xl border border-slate-800">
+                            <i data-lucide="check" class="w-5 h-5 text-brand-cyan flex-shrink-0"></i>
+                            <span class="text-sm font-medium text-slate-200">Precios e información clara</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-brand-dark/60 p-3 rounded-xl border border-slate-800">
+                            <i data-lucide="check" class="w-5 h-5 text-brand-cyan flex-shrink-0"></i>
+                            <span class="text-sm font-medium text-slate-200">Diseño 100% personalizado</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-brand-dark/60 p-3 rounded-xl border border-slate-800">
+                            <i data-lucide="check" class="w-5 h-5 text-brand-cyan flex-shrink-0"></i>
+                            <span class="text-sm font-medium text-slate-200">Compatible con celulares</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-brand-dark/60 p-3 rounded-xl border border-slate-800">
+                            <i data-lucide="check" class="w-5 h-5 text-brand-cyan flex-shrink-0"></i>
+                            <span class="text-sm font-medium text-slate-200">Botones directos a WhatsApp</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-brand-dark/60 p-3 rounded-xl border border-slate-800">
+                            <i data-lucide="check" class="w-5 h-5 text-brand-cyan flex-shrink-0"></i>
+                            <span class="text-sm font-medium text-slate-200">Fácil de compartir por link/QR</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-brand-dark/60 p-3 rounded-xl border border-slate-800">
+                            <i data-lucide="check" class="w-5 h-5 text-brand-cyan flex-shrink-0"></i>
+                            <span class="text-sm font-medium text-slate-200">Mayor confianza para clientes</span>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="https://wa.me/573134426880?text=Hola,%20quiero%20crear%20el%20cat%C3%A1logo%20web%20para%20mi%20negocio" target="_blank" class="inline-flex items-center gap-3 bg-gradient-to-r from-brand-primary to-brand-cyan text-white font-bold px-8 py-4 rounded-xl shadow-lg shadow-brand-primary/30 hover:shadow-brand-cyan/40 hover:scale-105 transition-all">
+                            <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+                            <span>Solicitar mi Catálogo Web</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Catalog Visual Mockup -->
+                <div class="lg:col-span-6">
+                    <div class="relative">
+                        <!-- Desktop View Container -->
+                        <div class="bg-slate-900 rounded-2xl p-4 border border-slate-700 shadow-2xl space-y-4">
+                            <!-- Header Mock -->
+                            <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center text-white font-bold text-xs">
+                                        MB
+                                    </div>
+                                    <div>
+                                        <div class="text-xs font-bold text-white">Moda & Calzado Urban</div>
+                                        <div class="text-[10px] text-slate-400">Catálogo de Temporada</div>
+                                    </div>
+                                </div>
+                                <div class="bg-emerald-600/20 text-emerald-400 border border-emerald-500/30 text-[10px] font-bold px-3 py-1 rounded-full flex items-center gap-1">
+                                    <i data-lucide="message-circle" class="w-3 h-3"></i>
+                                    <span>Pedir al WhatsApp</span>
+                                </div>
+                            </div>
+
+                            <!-- Category Tabs Demo -->
+                            <div class="flex gap-2 text-[11px] font-medium">
+                                <span class="bg-brand-primary text-white px-3 py-1 rounded-lg">Todos</span>
+                                <span class="bg-slate-800 text-slate-300 px-3 py-1 rounded-lg">Calzado</span>
+                                <span class="bg-slate-800 text-slate-300 px-3 py-1 rounded-lg">Chaquetas</span>
+                                <span class="bg-slate-800 text-slate-300 px-3 py-1 rounded-lg">Accesorios</span>
+                            </div>
+
+                            <!-- Cards Grid Demo -->
+                            <div class="grid grid-cols-2 gap-3">
+                                <!-- Item 1 -->
+                                <div class="bg-slate-950 p-2.5 rounded-xl border border-slate-800">
+                                    <div class="h-28 rounded-lg bg-slate-900 mb-2 flex items-center justify-center relative overflow-hidden">
+                                        <div class="absolute inset-0 bg-gradient-to-tr from-indigo-950 to-slate-900 flex items-center justify-center">
+                                            <i data-lucide="shirt" class="w-10 h-10 text-indigo-400"></i>
+                                        </div>
+                                        <span class="absolute top-2 right-2 bg-brand-cyan/20 text-brand-cyan text-[9px] font-bold px-1.5 py-0.5 rounded border border-brand-cyan/30">Nuevo</span>
+                                    </div>
+                                    <div class="text-xs font-bold text-white">Chaqueta Denim Unisex</div>
+                                    <div class="text-[10px] text-slate-400 line-clamp-1 mb-2">100% Algodón, varias tallas</div>
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-xs font-extrabold text-brand-cyan">$120.000</span>
+                                        <button class="bg-emerald-600 hover:bg-emerald-500 text-white text-[10px] px-2 py-1 rounded flex items-center gap-1 font-bold">
+                                            <i data-lucide="shopping-cart" class="w-3 h-3"></i>
+                                            <span>Pedir</span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Item 2 -->
+                                <div class="bg-slate-950 p-2.5 rounded-xl border border-slate-800">
+                                    <div class="h-28 rounded-lg bg-slate-900 mb-2 flex items-center justify-center relative overflow-hidden">
+                                        <div class="absolute inset-0 bg-gradient-to-tr from-blue-950 to-slate-900 flex items-center justify-center">
+                                            <i data-lucide="footprints" class="w-10 h-10 text-blue-400"></i>
+                                        </div>
+                                    </div>
+                                    <div class="text-xs font-bold text-white">Tenis Sneakers Pro</div>
+                                    <div class="text-[10px] text-slate-400 line-clamp-1 mb-2">Edición limitada urbana</div>
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-xs font-extrabold text-brand-cyan">$185.000</span>
+                                        <button class="bg-emerald-600 hover:bg-emerald-500 text-white text-[10px] px-2 py-1 rounded flex items-center gap-1 font-bold">
+                                            <i data-lucide="shopping-cart" class="w-3 h-3"></i>
+                                            <span>Pedir</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 6: PRICING -->
+    <section class="py-20 relative z-10">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="bg-gradient-to-b from-brand-card to-brand-surface border-2 border-brand-primary/50 rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden">
+                
+                <div class="absolute -top-12 -right-12 w-40 h-40 bg-brand-cyan/20 rounded-full blur-2xl"></div>
+
+                <div class="text-center space-y-4 max-w-2xl mx-auto mb-8">
+                    <span class="inline-block bg-brand-primary/20 text-brand-cyan border border-brand-primary/40 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest">
+                        Inversión Accesible
+                    </span>
+                    <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight">
+                        CATÁLOGOS WEB
+                    </h2>
+                    <p class="text-slate-300">
+                        Diseñamos tu catálogo de acuerdo con las necesidades de tu negocio.
+                    </p>
+                </div>
+
+                <!-- Price Highlight Box -->
+                <div class="bg-brand-dark/80 border border-slate-700/80 rounded-2xl p-6 sm:p-8 max-w-md mx-auto text-center space-y-3 my-6 shadow-inner">
+                    <div class="text-xs text-slate-400 font-semibold uppercase tracking-wider">Rango de precio base</div>
+                    <div class="flex items-center justify-center gap-2">
+                        <span class="text-slate-400 text-lg font-medium">Desde</span>
+                        <span class="text-3xl sm:text-4xl font-extrabold text-white">$50.000 COP</span>
+                    </div>
+                    <div class="flex items-center justify-center gap-2">
+                        <span class="text-slate-400 text-lg font-medium">Hasta</span>
+                        <span class="text-3xl sm:text-4xl font-extrabold text-brand-cyan">$100.000 COP</span>
+                    </div>
+                    <p class="text-[11px] text-slate-400 pt-2 border-t border-slate-800">
+                        *El precio final depende de la cantidad de productos e integración requerida.
+                    </p>
+                </div>
+
+                <!-- Action CTA -->
+                <div class="text-center space-y-4 pt-4">
+                    <a href="https://wa.me/573134426880?text=Hola,%20estoy%20interesado%20en%20crear%20un%20cat%C3%A1logo%20web%20para%20mi%20negocio.%20Me%20gustar%C3%ADa%20conocer%20los%20planes%20y%20opciones%20disponibles." 
+                       target="_blank" 
+                       class="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-emerald-500 via-emerald-600 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-black text-lg px-8 py-5 rounded-2xl shadow-xl shadow-emerald-950/50 hover:scale-105 transition-all duration-300 w-full sm:w-auto">
+                        <i data-lucide="message-circle" class="w-6 h-6"></i>
+                        <span>Quiero mi catálogo</span>
+                    </a>
+                    
+                    <div class="flex items-center justify-center gap-2 text-slate-400 text-xs pt-2">
+                        <i data-lucide="phone" class="w-3.5 h-3.5 text-brand-cyan"></i>
+                        <span>Atención directa: +57 313 442 6880</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 7: WEB DESIGN EXAMPLES -->
+    <section id="diseno-web" class="py-24 bg-brand-surface/50 border-y border-slate-800 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-brand-cyan font-bold text-sm tracking-widest uppercase">Sitios Web Completos</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
+                    También creamos tu página web
+                </h2>
+                <p class="text-slate-300">
+                    Si necesitas algo más que un catálogo, podemos crear una página web completa para presentar tu negocio, servicios, información de contacto y catálogo.
+                </p>
+            </div>
+
+            <!-- Categories Grid (Non-Electronic) -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Restaurantes -->
+                <div class="bg-brand-dark rounded-2xl p-6 border border-slate-800 hover:border-brand-primary transition-all duration-300 group">
+                    <div class="h-32 rounded-xl bg-gradient-to-br from-amber-950/60 to-orange-950/40 border border-amber-500/20 mb-4 flex items-center justify-center group-hover:scale-[1.02] transition-transform">
+                        <i data-lucide="utensils" class="w-12 h-12 text-amber-400"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Restaurantes & Gastronomía</h3>
+                    <p class="text-slate-400 text-xs">Menús digitales, reservas, ubicación geográfica e integración con pedidos directos.</p>
+                </div>
+
+                <!-- Tiendas -->
+                <div class="bg-brand-dark rounded-2xl p-6 border border-slate-800 hover:border-brand-primary transition-all duration-300 group">
+                    <div class="h-32 rounded-xl bg-gradient-to-br from-purple-950/60 to-indigo-950/40 border border-purple-500/20 mb-4 flex items-center justify-center group-hover:scale-[1.02] transition-transform">
+                        <i data-lucide="shopping-bag" class="w-12 h-12 text-purple-400"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Tiendas & Boutique</h3>
+                    <p class="text-slate-400 text-xs">Muestra tus colecciones de moda, calzado o accesorios con una estética limpia.</p>
+                </div>
+
+                <!-- Emprendimientos -->
+                <div class="bg-brand-dark rounded-2xl p-6 border border-slate-800 hover:border-brand-primary transition-all duration-300 group">
+                    <div class="h-32 rounded-xl bg-gradient-to-br from-emerald-950/60 to-teal-950/40 border border-emerald-500/20 mb-4 flex items-center justify-center group-hover:scale-[1.02] transition-transform">
+                        <i data-lucide="rocket" class="w-12 h-12 text-emerald-400"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Emprendimientos</h3>
+                    <p class="text-slate-400 text-xs">Landing pages de impacto para validar ideas de negocio y captar clientes rápidamente.</p>
+                </div>
+
+                <!-- Profesionales Independientes -->
+                <div class="bg-brand-dark rounded-2xl p-6 border border-slate-800 hover:border-brand-primary transition-all duration-300 group">
+                    <div class="h-32 rounded-xl bg-gradient-to-br from-blue-950/60 to-cyan-950/40 border border-blue-500/20 mb-4 flex items-center justify-center group-hover:scale-[1.02] transition-transform">
+                        <i data-lucide="user-check" class="w-12 h-12 text-blue-400"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Profesionales Independientes</h3>
+                    <p class="text-slate-400 text-xs">Portafolios para abogados, contadores, consultores, médicos y freelancers.</p>
+                </div>
+
+                <!-- Servicios -->
+                <div class="bg-brand-dark rounded-2xl p-6 border border-slate-800 hover:border-brand-primary transition-all duration-300 group">
+                    <div class="h-32 rounded-xl bg-gradient-to-br from-pink-950/60 to-rose-950/40 border border-pink-500/20 mb-4 flex items-center justify-center group-hover:scale-[1.02] transition-transform">
+                        <i data-lucide="sparkles" class="w-12 h-12 text-pink-400"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Belleza & Estética</h3>
+                    <p class="text-slate-400 text-xs">Spas, barberías y centros de estética con listado de servicios y agendamiento.</p>
+                </div>
+
+                <!-- Negocios Locales -->
+                <div class="bg-brand-dark rounded-2xl p-6 border border-slate-800 hover:border-brand-primary transition-all duration-300 group">
+                    <div class="h-32 rounded-xl bg-gradient-to-br from-slate-900 to-brand-card border border-slate-700/50 mb-4 flex items-center justify-center group-hover:scale-[1.02] transition-transform">
+                        <i data-lucide="map-pin" class="w-12 h-12 text-brand-cyan"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Negocios Locales</h3>
+                    <p class="text-slate-400 text-xs">Ferreterías, talleres, floristerías y comercios de barrio que quieren crecer.</p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 8: WHY CHOOSE US -->
+    <section id="beneficios" class="py-24 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-brand-cyan font-bold text-sm tracking-widest uppercase">Ventajas Competitivas</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
+                    Haz que tu negocio se vea profesional
+                </h2>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Advantage 1 -->
+                <div class="bg-brand-surface border border-slate-800 p-8 rounded-2xl text-center space-y-4 hover:border-brand-cyan transition-colors">
+                    <div class="w-16 h-16 rounded-2xl bg-brand-primary/10 text-brand-cyan flex items-center justify-center mx-auto">
+                        <i data-lucide="award" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Diseño Profesional</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        Una imagen digital impecable que genera confianza inmediata en tus clientes.
+                    </p>
+                </div>
+
+                <!-- Advantage 2 -->
+                <div class="bg-brand-surface border border-slate-800 p-8 rounded-2xl text-center space-y-4 hover:border-brand-cyan transition-colors">
+                    <div class="w-16 h-16 rounded-2xl bg-brand-primary/10 text-brand-cyan flex items-center justify-center mx-auto">
+                        <i data-lucide="smartphone" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Adaptado a Celulares</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        Tus clientes podrán navegar cómodamente desde cualquier dispositivo móvil.
+                    </p>
+                </div>
+
+                <!-- Advantage 3 -->
+                <div class="bg-brand-surface border border-slate-800 p-8 rounded-2xl text-center space-y-4 hover:border-brand-cyan transition-colors">
+                    <div class="w-16 h-16 rounded-2xl bg-brand-primary/10 text-brand-cyan flex items-center justify-center mx-auto">
+                        <i data-lucide="message-square" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Fácil Contacto</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        Conecta directamente con tus clientes mediante enlaces inmediatos a WhatsApp.
+                    </p>
+                </div>
+
+                <!-- Advantage 4 -->
+                <div class="bg-brand-surface border border-slate-800 p-8 rounded-2xl text-center space-y-4 hover:border-brand-cyan transition-colors">
+                    <div class="w-16 h-16 rounded-2xl bg-brand-primary/10 text-brand-cyan flex items-center justify-center mx-auto">
+                        <i data-lucide="tag" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Precio Accesible</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        Soluciones digitales pensadas para ajustarse al presupuesto de pequeños negocios.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 9: WORK PROCESS -->
+    <section class="py-24 bg-brand-surface/70 border-y border-slate-800 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-brand-cyan font-bold text-sm tracking-widest uppercase">Paso a Paso</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
+                    Proceso de Trabajo Simple
+                </h2>
+            </div>
+
+            <!-- Steps Grid with Connecting Line Effect -->
+            <div class="grid md:grid-cols-4 gap-8 relative">
+                
+                <!-- Connector Line (Desktop) -->
+                <div class="hidden md:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-brand-primary via-brand-cyan to-brand-primary -translate-y-8 z-0"></div>
+
+                <!-- Step 01 -->
+                <div class="bg-brand-dark p-6 rounded-2xl border border-slate-800 relative z-10 flex flex-col items-center text-center space-y-3">
+                    <div class="w-12 h-12 rounded-full bg-brand-primary text-white font-extrabold flex items-center justify-center text-lg shadow-lg shadow-brand-primary/40">
+                        01
+                    </div>
+                    <h3 class="font-bold text-white text-sm uppercase tracking-wider">Nos cuentas sobre tu negocio</h3>
+                    <p class="text-slate-400 text-xs">Entendemos qué vendes, tus colores y tu público objetivo.</p>
+                </div>
+
+                <!-- Step 02 -->
+                <div class="bg-brand-dark p-6 rounded-2xl border border-slate-800 relative z-10 flex flex-col items-center text-center space-y-3">
+                    <div class="w-12 h-12 rounded-full bg-brand-electric text-white font-extrabold flex items-center justify-center text-lg shadow-lg shadow-brand-electric/40">
+                        02
+                    </div>
+                    <h3 class="font-bold text-white text-sm uppercase tracking-wider">Organizamos tu información</h3>
+                    <p class="text-slate-400 text-xs">Clasificamos tus productos, fotos, precios y canales de contacto.</p>
+                </div>
+
+                <!-- Step 03 -->
+                <div class="bg-brand-dark p-6 rounded-2xl border border-slate-800 relative z-10 flex flex-col items-center text-center space-y-3">
+                    <div class="w-12 h-12 rounded-full bg-brand-cyan text-brand-dark font-extrabold flex items-center justify-center text-lg shadow-lg shadow-brand-cyan/40">
+                        03
+                    </div>
+                    <h3 class="font-bold text-white text-sm uppercase tracking-wider">Diseñamos tu página o catálogo</h3>
+                    <p class="text-slate-400 text-xs">Construimos la interfaz moderna, rápida e interactiva.</p>
+                </div>
+
+                <!-- Step 04 -->
+                <div class="bg-brand-dark p-6 rounded-2xl border border-slate-800 relative z-10 flex flex-col items-center text-center space-y-3">
+                    <div class="w-12 h-12 rounded-full bg-emerald-500 text-white font-extrabold flex items-center justify-center text-lg shadow-lg shadow-emerald-500/40">
+                        04
+                    </div>
+                    <h3 class="font-bold text-white text-sm uppercase tracking-wider">Publicamos y entregamos</h3>
+                    <p class="text-slate-400 text-xs">Tu sitio queda activo para compartirlo inmediatamente con tus clientes.</p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 10: BUSINESS TYPES -->
+    <section class="py-24 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-brand-cyan font-bold text-sm tracking-widest uppercase">Sectores</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
+                    Diseñamos para diferentes tipos de negocios
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-4 sm:gap-6">
+                
+                <div class="bg-brand-surface p-5 rounded-xl border border-slate-800 flex items-center gap-4 hover:border-brand-cyan transition-colors">
+                    <div class="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center">
+                        <i data-lucide="utensils" class="w-5 h-5"></i>
+                    </div>
+                    <span class="font-semibold text-sm text-slate-200">Restaurantes</span>
+                </div>
+
+                <div class="bg-brand-surface p-5 rounded-xl border border-slate-800 flex items-center gap-4 hover:border-brand-cyan transition-colors">
+                    <div class="w-10 h-10 rounded-lg bg-purple-500/10 text-purple-400 flex items-center justify-center">
+                        <i data-lucide="shirt" class="w-5 h-5"></i>
+                    </div>
+                    <span class="font-semibold text-sm text-slate-200">Tiendas de ropa</span>
+                </div>
+
+                <div class="bg-brand-surface p-5 rounded-xl border border-slate-800 flex items-center gap-4 hover:border-brand-cyan transition-colors">
+                    <div class="w-10 h-10 rounded-lg bg-pink-500/10 text-pink-400 flex items-center justify-center">
+                        <i data-lucide="sparkles" class="w-5 h-5"></i>
+                    </div>
+                    <span class="font-semibold text-sm text-slate-200">Belleza y estética</span>
+                </div>
+
+                <div class="bg-brand-surface p-5 rounded-xl border border-slate-800 flex items-center gap-4 hover:border-brand-cyan transition-colors">
+                    <div class="w-10 h-10 rounded-lg bg-orange-500/10 text-orange-400 flex items-center justify-center">
+                        <i data-lucide="cake" class="w-5 h-5"></i>
+                    </div>
+                    <span class="font-semibold text-sm text-slate-200">Repostería</span>
+                </div>
+
+                <div class="bg-brand-surface p-5 rounded-xl border border-slate-800 flex items-center gap-4 hover:border-brand-cyan transition-colors">
+                    <div class="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center">
+                        <i data-lucide="rocket" class="w-5 h-5"></i>
+                    </div>
+                    <span class="font-semibold text-sm text-slate-200">Emprendimientos</span>
+                </div>
+
+                <div class="bg-brand-surface p-5 rounded-xl border border-slate-800 flex items-center gap-4 hover:border-brand-cyan transition-colors">
+                    <div class="w-10 h-10 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center">
+                        <i data-lucide="briefcase" class="w-5 h-5"></i>
+                    </div>
+                    <span class="font-semibold text-sm text-slate-200">Servicios profesionales</span>
+                </div>
+
+                <div class="bg-brand-surface p-5 rounded-xl border border-slate-800 flex items-center gap-4 hover:border-brand-cyan transition-colors">
+                    <div class="w-10 h-10 rounded-lg bg-slate-500/10 text-slate-300 flex items-center justify-center">
+                        <i data-lucide="wrench" class="w-5 h-5"></i>
+                    </div>
+                    <span class="font-semibold text-sm text-slate-200">Ferreterías</span>
+                </div>
+
+                <div class="bg-brand-surface p-5 rounded-xl border border-slate-800 flex items-center gap-4 hover:border-brand-cyan transition-colors">
+                    <div class="w-10 h-10 rounded-lg bg-teal-500/10 text-teal-400 flex items-center justify-center">
+                        <i data-lucide="store" class="w-5 h-5"></i>
+                    </div>
+                    <span class="font-semibold text-sm text-slate-200">Negocios locales</span>
+                </div>
+
+                <div class="bg-brand-surface p-5 rounded-xl border border-slate-800 flex items-center gap-4 hover:border-brand-cyan transition-colors">
+                    <div class="w-10 h-10 rounded-lg bg-indigo-500/10 text-indigo-400 flex items-center justify-center">
+                        <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                    </div>
+                    <span class="font-semibold text-sm text-slate-200">Tiendas online</span>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 11: CALL TO ACTION BANNER -->
+    <section class="py-20 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-r from-brand-primary via-brand-electric to-blue-700 rounded-3xl p-10 sm:p-16 text-center space-y-8 shadow-2xl relative overflow-hidden">
+                
+                <div class="max-w-3xl mx-auto space-y-4 relative z-10">
+                    <h2 class="text-3xl sm:text-5xl font-black text-white leading-tight">
+                        ¿Listo para llevar tu negocio al siguiente nivel?
+                    </h2>
+                    <p class="text-blue-100 text-lg">
+                        Dale a tus clientes un lugar donde puedan conocer lo que haces, ver tus productos y contactarte fácilmente.
+                    </p>
+                </div>
+
+                <div class="relative z-10 pt-2">
+                    <a href="https://wa.me/573134426880?text=Hola,%20estoy%20listo%20para%20llevar%20mi%20negocio%20al%20siguiente%20nivel.%20Quiero%20m%C3%A1s%20informaci%C3%B3n." 
+                       target="_blank" 
+                       class="inline-flex items-center gap-3 bg-emerald-500 hover:bg-emerald-400 text-white font-extrabold text-lg px-8 py-4 rounded-2xl shadow-xl hover:scale-105 transition-all">
+                        <i data-lucide="message-circle" class="w-6 h-6"></i>
+                        <span>Hablar por WhatsApp (+57 313 442 6880)</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 12: ABOUT US -->
+    <section id="nosotros" class="py-20 bg-brand-surface/40 border-y border-slate-800 relative z-10">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+            <span class="text-brand-cyan font-bold text-sm tracking-widest uppercase">Identidad de Marca</span>
+            <h2 class="text-3xl font-extrabold text-white">¿Quiénes somos?</h2>
+            <p class="text-slate-300 text-lg leading-relaxed max-w-3xl mx-auto">
+                <strong class="text-white">Límite Electrónico</strong> es una microempresa enfocada en ayudar a negocios y emprendimientos a construir una presencia digital profesional mediante páginas web y catálogos digitales.
+            </p>
+            <div class="inline-block bg-brand-dark/80 border border-brand-primary/40 px-6 py-3 rounded-full text-brand-cyan font-bold text-sm tracking-wide shadow-md">
+                Diseño + Tecnología + Negocios
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 13: CONTACT -->
+    <section id="contacto" class="py-24 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12">
+                
+                <!-- Info Side -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="text-brand-cyan font-bold text-sm tracking-widest uppercase">Contacto Directo</span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Hablemos de tu proyecto</h2>
+                        <p class="text-slate-300 mt-4 leading-relaxed">
+                            Estamos listos para asesorarte y encontrar el plan que mejor se adapte a tu emprendimiento.
+                        </p>
+                    </div>
+
+                    <div class="bg-brand-surface p-6 rounded-2xl border border-slate-800 space-y-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center">
+                                <i data-lucide="message-circle" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-slate-400 font-medium">Atención inmediata WhatsApp</div>
+                                <div class="text-lg font-bold text-white">+57 313 442 6880</div>
+                            </div>
+                        </div>
+
+                        <a href="https://wa.me/573134426880?text=Hola,%20quisiera%20recibir%20informaci%C3%B3n%20sobre%20sus%20servicios" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2 transition-colors text-sm">
+                            <i data-lucide="send" class="w-4 h-4"></i>
+                            <span>Escribir por WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Form Side -->
+                <div class="lg:col-span-7">
+                    <form id="contact-form" class="bg-brand-surface p-8 rounded-3xl border border-slate-800 space-y-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Solicitar información</h3>
+                        
+                        <div class="grid sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-2">Nombre completo</label>
+                                <input type="text" id="form-name" required placeholder="Tu nombre" class="w-full bg-brand-dark border border-slate-700/80 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-brand-cyan transition-colors text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-2">Nombre de tu negocio</label>
+                                <input type="text" id="form-business" required placeholder="Ej. Mi Tienda Gourmet" class="w-full bg-brand-dark border border-slate-700/80 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-brand-cyan transition-colors text-sm">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-2">Servicio que necesitas</label>
+                            <select id="form-service" class="w-full bg-brand-dark border border-slate-700/80 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-cyan transition-colors text-sm">
+                                <option value="Catálogo Web ($50.000 - $100.000 COP)">Catálogo Web ($50.000 - $100.000 COP)</option>
+                                <option value="Página Web Completa">Página Web Completa</option>
+                                <option value="Diseño Web + Catálogo">Diseño Web + Catálogo</option>
+                                <option value="Otro / Consulta general">Otro / Consulta general</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-2">Mensaje o detalle de tu consulta</label>
+                            <textarea id="form-message" rows="4" required placeholder="Cuéntanos un poco sobre tus productos o lo que necesitas..." class="w-full bg-brand-dark border border-slate-700/80 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-brand-cyan transition-colors text-sm"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-gradient-to-r from-brand-primary to-brand-electric hover:from-brand-electric hover:to-brand-cyan text-white font-bold py-4 rounded-xl shadow-lg transition-all text-base flex items-center justify-center gap-2">
+                            <i data-lucide="send" class="w-5 h-5"></i>
+                            <span>Enviar mensaje por WhatsApp</span>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 border-t border-slate-800 text-slate-400 py-12 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-12 gap-8 pb-12 border-b border-slate-800/80">
+                
+                <div class="md:col-span-6 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-brand-primary to-brand-cyan flex items-center justify-center text-white">
+                            <i data-lucide="globe" class="w-5 h-5"></i>
+                        </div>
+                        <span class="text-lg font-extrabold text-white">LÍMITE ELECTRÓNICO</span>
+                    </div>
+                    <p class="text-xs text-slate-400 max-w-sm">
+                        Diseñamos soluciones digitales para hacer crecer tu negocio. Catálogos web y sitios para emprendedores y pymes.
+                    </p>
+                </div>
+
+                <div class="md:col-span-3 space-y-3">
+                    <div class="text-xs font-bold text-white uppercase tracking-wider">Enlaces Rápidos</div>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#inicio" class="hover:text-brand-cyan transition-colors">Inicio</a></li>
+                        <li><a href="#servicios" class="hover:text-brand-cyan transition-colors">Servicios</a></li>
+                        <li><a href="#catalogos" class="hover:text-brand-cyan transition-colors">Catálogos Web</a></li>
+                        <li><a href="#diseno-web" class="hover:text-brand-cyan transition-colors">Diseño Web</a></li>
+                        <li><a href="#nosotros" class="hover:text-brand-cyan transition-colors">Nosotros</a></li>
+                        <li><a href="#contacto" class="hover:text-brand-cyan transition-colors">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="md:col-span-3 space-y-3">
+                    <div class="text-xs font-bold text-white uppercase tracking-wider">Contacto</div>
+                    <div class="text-xs text-slate-300 font-semibold">WhatsApp: +57 313 442 6880</div>
+                    <div class="text-[11px] text-slate-500">Atención a nivel nacional</div>
+                </div>
+
+            </div>
+
+            <div class="pt-8 text-center text-xs text-slate-500">
+                <p>© 2026 Límite Electrónico. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="main.js"></script>
+</body>
+</html>
